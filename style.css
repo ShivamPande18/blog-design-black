@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier Prime', monospace;
+    transition: 0.1s ease-in-out;
+}
+
+body{
+    background-color: black;
+}
+
+h3{
+    color:#09bdfc;
+}
+
+nav{
+    background-color: white;
+    /* height: 100px; */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+.navRight{
+    float: right;
+}
+
+.navLeft a{ 
+    float:left;
+}
+
+nav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 5px 16px;
+  text-decoration: none;
+}
+
+.active{
+    background-color: black;
+    color: white;
+}
+
+nav li a:hover {
+  background-color: black;
+  color: white;
+  transition: .1s ease-in-out;
+}
+
+
+.headerSec{
+    margin-top: 50px;
+    position: relative;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerSec img{
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
+}
+
+.headerCover{
+    background-color: rgba(0, 0, 0, 0.63);
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 25px;
+}
+
+.headerSec h1{
+    color: white;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.headerSec h2{
+    color: white;
+    font-size: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    padding: 50px 10px;
+    color: black;
+    background-color: #e4e4e4;
+    /* border-radius: 5px; */
+}
+
+.slide{
+    display: none;
+    opacity: 0;
+    transition: .1s ease-in-out;
+}
+
+.slideActive{
+    display: flex;
+    opacity: 1;
+}
+
+.card img{
+    object-fit: cover;
+    max-height: 350px;
+    max-width: 350px;
+    border: 2px solid black;
+    /* border-radius: 10px; */
+}
+
+.card p{
+    font-size: 10px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.main{
+    padding: 0 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.mainTitle{
+    color: white;
+    margin-bottom: 50px;
+}
+
+.gridCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 50px;
+    row-gap: 50px;
+    width: fit-content;
+}
+
+.listCard{
+    opacity: 0;
+    transform: translateY(150px);
+    transition: 1s all ease;
+    background-color: #e4e4e4;
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.listCardActive{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.listCard:before, .listCard:after{
+    background-color: #e4e4e4;
+	border: 1px solid #ccc;
+	box-shadow: inset 0 0 30px rgba(0,0,0,0.1), 1px 1px 3px rgba(0,0,0,0.2);
+    content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+    height: 100%;
+    transform: rotateZ(2.5deg);
+    z-index: -1;
+    transition: transform .2s ease-in-out;
+}
+
+.listCard:after
+{
+	transform: rotateZ(-2.5deg);
+}
+
+.listCard:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+.listCard:hover .readMore{
+    display: flex;
+}
+
+.listCard:hover::before , .listCard:hover::after{
+    transform: rotateZ(0deg);
+}
+
+.listCard h1{
+    font-size: 15px;
+}
+
+.listCard p{
+    font-size: 10px;
+}
+
+.listCard img{
+    object-fit: cover;
+    height: 160px;
+    width: 100%;
+}
+
+.detailOverlay{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
+}
+
+footer{
+    background-color: white;
+    width: 100vw;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    text-align: center;
+}
+
+.footerInput{
+    background-color: red;
+    display: flex;
+    width: 50vw;
+    margin-top: 20px;
+}
+
+.footerInput input{
+    flex: 9;
+    padding: 0 10px;
+}
+
+.footerInput input:focus{
+   outline: none;
+}
+
+.footerInput button{
+    flex: 1;
+    border: 1px black solid;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+}
+
+@media screen and (min-width: 800px)
+{
+    .card{
+      padding: 50px 80px;
+  }
+
+  .headerCover{
+      padding: 50px 50px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .grid {
+    grid-template-columns: 33% 33% 33%;
+  }
+
+  .card{
+      padding: 50px 100px;
+  }
+  .headerCover{
+      padding: 50px 100px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+    .card h1{
+        font-size: 15px;
+    }
+    .card img{
+        max-height: 250px;
+    max-width: 250px;
+  }
+
+  .grid {
+    grid-template-columns: 100%;
+  }
+}
+
+
+@media screen and (max-width: 400px){
+
+    .card img{
+        max-height: 200px;
+    max-width: 200px;
+  }
+
+    .card h1{
+        font-size: 13px;
+    }
+
+    .card p{
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 400px){
+
+    nav{
+        font-size: 10px;
+    }
+
+    .headerCover h1{
+        font-size: 20px;
+    }
+
+    .headerCover h2{
+        font-size: 10px;
+    }
+
+    .card img{
+        max-height: 150px;
+    max-width: 150px;
+  }
+
+    .card h1{
+        font-size: 10px;
+    }
+
+    .card p{
+        font-size: 5px;
+    }
+}
+
